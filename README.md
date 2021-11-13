@@ -45,7 +45,7 @@ In your browser, go to http://localhost:8080
 
 
 # Hasura Docs
-Follow these <a href=https://hasura.io/docs/latest/graphql/core/index.html">docs</a> for a detailed guide on Hasura. 
+Follow these <a href="https://hasura.io/docs/latest/graphql/core/index.html">docs</a> for a detailed guide on Hasura. 
 
 
 
