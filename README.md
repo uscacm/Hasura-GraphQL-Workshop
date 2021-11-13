@@ -41,7 +41,10 @@ hasura seed apply --database-name default # apply seed
 ```
 
 ## Enter the hasura console
-In your browser, go to http://localhost:8080
+```bash
+hasura console
+```
+If the metadata is inconsistent, click on the settings icon (shown in demo) and click "reload metadata." Make sure "reload database" is also checked when you click the button.
 
 
 # Hasura Docs
