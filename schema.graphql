@@ -1,0 +1,57 @@
+type User {
+    id: String!
+    firstName: String!
+    lastName: String!
+    posts: [Post!]!
+}
+
+type Post {
+    id: String!
+    user: User!
+    message: String!
+    comments: [Comment!]!
+}
+
+type Comment {
+    id: String!
+    user: User!
+    post: Post!
+    message: String!
+}
+
+type Query {
+    user(id: String!): User
+    users: [User!]
+    post(id: String!): Post
+    comment(id: String!): Comment
+}
+
+type Mutation {
+    createUser(firstName: String!, lastName: String!): User!
+    createPost(userId: String!, message: String!): Post!
+    createComment(postId: String!, userId: String!, message: String): Comment!
+}
+
+mutation CreateUser($firstName: String!, $lastName: String!) {
+    createUser(firstName: $firstName, lastName: $lastName) {
+        id,
+        firstName,
+        lastName,
+    }
+}
+
+query GetUser($id: String!) {
+    user(id: $id) {
+        id,
+        firstName,
+        posts {
+            id,
+            message,
+            comments {
+                id,
+                message
+            }
+        }
+    }
+}
+
